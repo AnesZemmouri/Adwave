@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  background-color: #0c0013;
+  margin: 0;
+  overflow: hidden;
+  position: relative; /* Allows absolute positioning of child elements */
+}
+
+/* Circle styles */
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  filter: blur(90px);
+  opacity: 0.7;
+  z-index: -1; /* Ensures circles stay in the background */
+  animation: float 10s ease-in-out infinite, scale 6s ease-in-out infinite;
+}
+
+.circle1 {
+  background: #ab1dee;
+  width: 237px;
+  height: 380px;
+  filter: blur(130px);
+  top: 40%;
+  right: 0%;
+  z-index: -1;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.circle2 {
+  background: #ab1dee;
+  top: -30%;
+  left: 0%;
+  z-index: -1;
+}
+/* 
+.circle3 {
+  background: #ffd36b;
+  top: 80%;
+  left: 40%;
+} */
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  padding-right: 80px;
+  margin: 15px 30px;
+  position: relative;
+  z-index: 1;
+  border-radius: 50px; /* Rounded corners */
+  background: rgba(255, 255, 255, 0.03); /* Very subtle white background */
+  border: #ab1dee solid;
+}
+
+.logo img {
+  width: 5vh;
+}
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.fstSection {
+  padding-top: 70px;
+  color: white;
+  display: flex;
+  flex-direction: column; /* Adjust if needed */
+  align-items: center;
+  gap: 2px;
+}
+.fstSection h1 {
+  font-size: 100px;
+  margin: 0;
+}
+.fstSection .wr {
+  font-size: 40px;
+  margin: 0;
+}
+.fstSection .btmp {
+  font-weight: lighter;
+  text-transform: capitalize;
+  opacity: 0.5;
+}
+.typewrite > .wrap {
+  border-right: 0.08em solid #ab1dee;
+  min-width: 100px;
+  visibility: hidden;
+}
+
+.typewrite > .wrap.visible {
+  visibility: visible;
+}
+
+.cons {
+  position: relative;
+  padding-top: 150px;
+  margin-top: 2rem;
+}
+
+.button-container {
+  position: relative;
+  margin-bottom: 8rem;
+  box-shadow: 0 4px 15px rgba(171, 29, 238, 0.5);
+}
+
+.consultation-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%; /* Centers horizontally */
+  transform: translate(-50%, -50%); /* Aligns the center point */
+  z-index: 2; /* Ensures it’s above the curved line */
+  border: 1px solid #ab1dee;
+  background-color: #37074e;
+  transition: background-color 0.3s ease;
+}
+.consultation-btn:hover {
+  background-color: #ab1dee;
+}
+
+
+/* Curved line effect */
+.curve-line {
+  position: absolute;
+  top: 35%; /* Adjusts vertical positioning */
+  left: 50%;
+  transform: translateX(-50%) scaleY(-1); /* Centers horizontally and flips vertically */
+  width: 200vw; /* Makes it wider than the viewport */
+  height: 100vw; /* Increases the curve depth */
+  border-radius: 50%; /* Ensures a circular shape */
+  border: 2px solid transparent; /* Hides all borders */
+  border-bottom-color: #ab1dee; /* Shows only the bottom border */
+  z-index: 1;
+  
+}
+
+
+
+/* Keyframe animations */
+/* @keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+} */
