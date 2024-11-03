@@ -2,14 +2,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 * {
-  /* font-family: "Roboto", sans-serif; */
+  box-sizing: border-box; /* Add this line */
   font-family: "Ubuntu", sans-serif;
 }
 
 body {
   background-color: #0c0013;
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   position: relative; /* Allows absolute positioning of child elements */
 }
 
@@ -31,9 +31,10 @@ body {
   height: 380px;
   filter: blur(130px);
   top: 40%;
-  right: 0%;
+  right: 0%; /* Ensure it doesn't extend outside the viewport */
   z-index: -1;
 }
+
 a {
   text-decoration: none;
   color: white;
@@ -42,15 +43,25 @@ a {
 .circle2 {
   background: #ab1dee;
   top: -30%;
-  left: 0%;
+  left: 0%; /* Ensure it doesn't extend outside the viewport */
   z-index: -1;
 }
-/* 
 .circle3 {
-  background: #ffd36b;
-  top: 80%;
-  left: 40%;
-} */
+  background: #ac1deea4;
+  top: 100%;
+  left: -10%; /* Ensure it doesn't extend outside the viewport */
+  filter: blur(130px);
+  z-index: -1;
+}
+.circle4 {
+  background: #0c0013;
+  top: 100%;
+  left: 40%; /* Ensure it doesn't extend outside the viewport */
+  width: 380px;
+  height: 380px;
+  /* filter: blur(30px); */
+  z-index: -1;
+}
 
 /* Navbar styling */
 .navbar {
@@ -70,6 +81,7 @@ a {
 .logo img {
   width: 5vh;
 }
+
 .nav-links {
   display: flex;
   gap: 40px;
@@ -83,19 +95,23 @@ a {
   align-items: center;
   gap: 2px;
 }
+
 .fstSection h1 {
   font-size: 100px;
   margin: 0;
 }
+
 .fstSection .wr {
   font-size: 40px;
   margin: 0;
 }
+
 .fstSection .btmp {
   font-weight: lighter;
   text-transform: capitalize;
   opacity: 0.5;
 }
+
 .typewrite > .wrap {
   border-right: 0.08em solid #ab1dee;
   min-width: 100px;
@@ -108,14 +124,13 @@ a {
 
 .cons {
   position: relative;
-  padding-top: 150px;
+  padding-top: 70px;
   margin-top: 2rem;
 }
 
 .button-container {
   position: relative;
   margin-bottom: 8rem;
-  box-shadow: 0 4px 15px rgba(171, 29, 238, 0.5);
 }
 
 .consultation-btn {
@@ -135,10 +150,10 @@ a {
   background-color: #37074e;
   transition: background-color 0.3s ease;
 }
+
 .consultation-btn:hover {
   background-color: #ab1dee;
 }
-
 
 /* Curved line effect */
 .curve-line {
@@ -146,16 +161,103 @@ a {
   top: 35%; /* Adjusts vertical positioning */
   left: 50%;
   transform: translateX(-50%) scaleY(-1); /* Centers horizontally and flips vertically */
-  width: 200vw; /* Makes it wider than the viewport */
-  height: 100vw; /* Increases the curve depth */
+  width: 200vw; /* Increased width to make it larger */
+  height: 80vw; /* Increased height to make it larger */
   border-radius: 50%; /* Ensures a circular shape */
   border: 2px solid transparent; /* Hides all borders */
   border-bottom-color: #ab1dee; /* Shows only the bottom border */
   z-index: 1;
-  
+  box-shadow: 0 15px 15px 5px rgba(171, 29, 238, 0.3);
 }
 
+.crds {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
 
+.stat-card {
+  background-color: #34004c;
+  color: white;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background */
+}
+
+.stat-card:hover {
+  background-color: #4b007a; /* New background color on hover */
+  transform: scale(1.05); /* Slightly expand the card */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add a larger shadow for more depth */
+}
+
+.vctr {
+  width: 60px; /* Adjust icon size as needed */
+  margin-bottom: 0px; /* Space between icon and text */
+}
+
+.thre {
+  font-size: 50px; /* Adjust font size */
+  margin: 5px 0; /* Add spacing if needed */
+}
+
+.par {
+  font-weight: lighter;
+  opacity: 0.5;
+}
+.background-text {
+  padding-top: 150px;
+  font-size: 20rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.1); /* Light color for subtle effect */
+  position: absolute;
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Offset to perfect center */
+  z-index: -1; /* Pushes the text behind other elements */
+  white-space: nowrap; /* Prevents wrapping of text */
+  opacity: 0.5;
+}
+.wrw {
+  position: relative; /* Establishes a positioning context for children */
+  padding-top: 30px;
+  text-align: center;
+}
+
+.scrl {
+  position: absolute;
+  top: 0; /* Adjust to control vertical alignment */
+  left: 58%;
+  transform: translateX(-50%); /* Centers image horizontally over text */
+  width: 50vh;
+  z-index: 1; /* Places the image below the text */
+}
+
+.wrw h2 {
+  padding-top: 50px;
+  color: white;
+  font-size: 100px;
+  position: relative;
+  z-index: 2; /* Ensures text is above the image */
+  margin: 0;
+}
+.arwe {
+  background-color: #ab1dee;
+  border-left: 10px solid white;
+  border-right: 10px solid white;
+  padding: 0 5px;
+}
+
+/* Keyframe animations */
 
 /* Keyframe animations */
 /* @keyframes float {
